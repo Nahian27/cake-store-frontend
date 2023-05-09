@@ -56,26 +56,26 @@ const CartItem = ({ data }) => {
                 <div className="flex items-center justify-between mt-4">
                     <div className="flex items-center gap-2 md:gap-10 text-black/[0.5] text-sm md:text-md">
                         <div className="flex items-center gap-1">
-                            <div className="font-semibold">Size:</div>
+                            <div className="font-semibold">Weight:</div>
                             <select
                                 className="hover:text-black"
                                 onChange={(e) =>
-                                    updateCartItem(e, "selectedSize")
+                                    updateCartItem(e, "selectedWeight")
                                 }
                             >
-                                {p.size.data.map((item, i) => {
+                                {p.attributes.data.map((item, i) => {
                                     return (
                                         <option
                                             key={i}
-                                            value={item.size}
+                                            value={item.weight}
                                             disabled={
                                                 !item.enabled ? true : false
                                             }
                                             selected={
-                                                data.selectedSize === item.size
+                                                data.selectedWeight === item.weight
                                             }
                                         >
-                                            {item.size}
+                                            {item.weight}
                                         </option>
                                     );
                                 })}

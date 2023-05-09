@@ -57,12 +57,12 @@ const ProductDetails = ({ product, products }) => {
                         {/* PRODUCT PRICE */}
                         <div className="flex items-center">
                             <p className="mr-2 text-lg font-semibold">
-                                MRP : &#8377;{p.price}
+                                Price : &#2547;{p.price}
                             </p>
                             {p.original_price && (
                                 <>
                                     <p className="text-base  font-medium line-through">
-                                        &#8377;{p.original_price}
+                                        &#2547;{p.original_price}
                                     </p>
                                     <p className="ml-auto text-base font-medium text-green-500">
                                         {getDiscountedPricePercentage(
@@ -87,7 +87,7 @@ const ProductDetails = ({ product, products }) => {
                             {/* HEADING START */}
                             <div className="flex justify-between mb-2">
                                 <div className="text-md font-semibold">
-                                    Select Size
+                                    Select Weight
                                 </div>
                                 <div className="text-md font-medium text-black/[0.5] cursor-pointer">
                                     Select Guide
@@ -100,7 +100,7 @@ const ProductDetails = ({ product, products }) => {
                                 id="sizesGrid"
                                 className="grid grid-cols-3 gap-2"
                             >
-                                {p.size.data.map((item, i) => (
+                                {p.attributes.data.map((item, i) => (
                                     <div
                                         key={i}
                                         className={`border rounded-md text-center py-3 font-medium ${
@@ -108,16 +108,16 @@ const ProductDetails = ({ product, products }) => {
                                                 ? "hover:border-black cursor-pointer"
                                                 : "cursor-not-allowed bg-black/[0.1] opacity-50"
                                         } ${
-                                            selectedSize === item.size
+                                            selectedSize === item.weight
                                                 ? "border-black"
                                                 : ""
                                         }`}
                                         onClick={() => {
-                                            setSelectedSize(item.size);
+                                            setSelectedSize(item.weight);
                                             setShowError(false);
                                         }}
                                     >
-                                        {item.size}
+                                        {item.weight}
                                     </div>
                                 ))}
                             </div>
@@ -126,7 +126,7 @@ const ProductDetails = ({ product, products }) => {
                             {/* SHOW ERROR START */}
                             {showError && (
                                 <div className="text-red-600 mt-1">
-                                    Size selection is required
+                                    Weight selection is required
                                 </div>
                             )}
                             {/* SHOW ERROR END */}

@@ -56,7 +56,8 @@ const Header = () => {
         >
             <Wrapper className="h-[60px] flex justify-between items-center">
                 <Link href="/">
-                    <img src="/logo.svg" className="w-[40px] md:w-[60px]" />
+                    {/*<img src="/logo.svg" className="w-[40px] md:w-[60px]" />*/}
+                    <h1 className="text-3xl font-bold">T&A Cake Shop</h1>
                 </Link>
 
                 <Menu
