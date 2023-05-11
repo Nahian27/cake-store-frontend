@@ -214,7 +214,6 @@ export async function getStaticProps({ params: { slug } }) {
         props: {
             product,
             products,
-        },
-        revalidate: 1,
+        }
     };
 }
