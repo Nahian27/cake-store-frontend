@@ -195,10 +195,11 @@ export async function getStaticPaths() {
             slug: p.attributes.slug,
         },
     }));
+    const result = paths.filter(({ params }) => params.category !== 'custom');
 
     return {
-        paths,
-        fallback: false,
+        paths:result,
+        fallback: true,
     };
 }
 

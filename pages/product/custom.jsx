@@ -14,8 +14,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { Reorder } from "framer-motion";
 import { Item } from "@/components/Item";
 
-// const initialItems = ["🍅 Tomato", "🥒 Cucumber", "🧀 Cheese", "🥬 Lettuce"];
-
 const ProductDetails = ({ product, products }) => {
     const [selectedSize, setSelectedSize] = useState();
     const [showError, setShowError] = useState(false);
