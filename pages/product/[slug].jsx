@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { IoMdHeartEmpty } from "react-icons/io";
+import React, {useState} from "react";
+import {IoMdHeartEmpty} from "react-icons/io";
 import Wrapper from "@/components/Wrapper";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
-import { fetchDataFromApi } from "@/utils/api";
-import { getDiscountedPricePercentage } from "@/utils/helper";
+import {fetchDataFromApi} from "@/utils/api";
+import {getDiscountedPricePercentage} from "@/utils/helper";
 import ReactMarkdown from "react-markdown";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "@/store/cartSlice";
+import {useSelector, useDispatch} from "react-redux";
+import {addToCart} from "@/store/cartSlice";
 
-import { ToastContainer, toast } from "react-toastify";
+import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductDetails = ({ product, products }) => {
+const ProductDetails = ({product, products}) => {
     const [selectedSize, setSelectedSize] = useState();
     const [showError, setShowError] = useState(false);
     const dispatch = useDispatch();
@@ -33,12 +33,12 @@ const ProductDetails = ({ product, products }) => {
 
     return (
         <div className="w-full md:py-20">
-            <ToastContainer />
+            <ToastContainer/>
             <Wrapper>
                 <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
                     {/* left column start */}
                     <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
-                        <ProductDetailsCarousel images={p.image.data} />
+                        <ProductDetailsCarousel images={p.image.data}/>
                     </div>
                     {/* left column end */}
 
@@ -162,9 +162,10 @@ const ProductDetails = ({ product, products }) => {
                         {/* ADD TO CART BUTTON END */}
 
                         {/* WHISHLIST BUTTON START */}
-                        <button className="w-full py-4 rounded-full border border-black text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10">
+                        <button
+                            className="w-full py-4 rounded-full border border-black text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10">
                             Whishlist
-                            <IoMdHeartEmpty size={20} />
+                            <IoMdHeartEmpty size={20}/>
                         </button>
                         {/* WHISHLIST BUTTON END */}
 
@@ -180,7 +181,7 @@ const ProductDetails = ({ product, products }) => {
                     {/* right column end */}
                 </div>
 
-                <RelatedProducts products={products} />
+                <RelatedProducts products={products}/>
             </Wrapper>
         </div>
     );
@@ -189,21 +190,21 @@ const ProductDetails = ({ product, products }) => {
 export default ProductDetails;
 
 export async function getStaticPaths() {
-    const products = await fetchDataFromApi("/api/products?populate=*");
+    const products = await fetchDataFromApi("/api/products");
     const paths = products?.data?.map((p) => ({
         params: {
-            slug: p.attributes.slug,
+            slug: p?.attributes?.slug,
         },
     }));
-    const result = paths.filter(({ params }) => params.category !== 'custom');
+    const result = paths.filter(({params}) => params.slug !== "custom");
 
     return {
-        paths:result,
-        fallback: true,
+        paths: result,
+        fallback: false,
     };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({params: {slug}}) {
     const product = await fetchDataFromApi(
         `/api/products?populate=*&filters[slug][$eq]=${slug}`
     );
@@ -216,6 +217,6 @@ export async function getStaticProps({ params: { slug } }) {
             product,
             products,
         },
-        revalidate:1,
+        revalidate: 1,
     };
 }
