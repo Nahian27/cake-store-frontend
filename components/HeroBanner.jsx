@@ -31,7 +31,7 @@ const HeroBanner = () => {
             >
                 <div>
                     <img
-                        src="/thumb-1920-873362.jpg"
+                        src="/c96926322a530c19647d60e620fa2a3e.jpg"
                         className="aspect-[16/8] object-cover"
                     />
                     <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-white absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
@@ -41,7 +41,7 @@ const HeroBanner = () => {
 
                 <div>
                     <img
-                        src="/thumb-1920-914571.jpg"
+                        src="/minimal-1-scaled.jpg"
                         className="aspect-[16/8] object-cover"
                     />
                     <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-white absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
@@ -51,7 +51,7 @@ const HeroBanner = () => {
 
                 <div>
                     <img
-                        src="/wp2003990.jpg"
+                        src="/Pakistani-Mehndi-Designs2.jpg"
                         className="aspect-[16/8] object-cover"
                     />
                     <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-black absolute bottom-[25px] md:bottom-[75px] left-0 text-white/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">

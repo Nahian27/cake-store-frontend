@@ -8,11 +8,11 @@ export default function (){
                Developed By
             </h2>
             <p className="text-center text-2xl text-gray-600 mt-10">
-                Aysha Afifa
+                Shahanaj Islam Soya
             </p>
-            <p className="text-center text-2xl text-gray-600 mb-10 mt-5">
-                Tamanna Tabassum
-            </p>
+            {/*<p className="text-center text-2xl text-gray-600 mb-10 mt-5">*/}
+            {/*    Tamanna Tabassum*/}
+            {/*</p>*/}
         </div>
     )
 }

@@ -10,10 +10,10 @@ export default function Home({ products }) {
                 {/* heading and paragaph start */}
                 <div className="text-center max-w-[1000px] mx-auto my-[50px] md:my-[80px]">
                     <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
-                        "Savor Sweet Moments: Your One-Stop Online Cake Shop!"
+                        "Explore intricate and mesmerizing mehendi designs at our portal, where artistry meets tradition!"
                     </div>
                     <div className="text-md md:text-xl">
-                        Delight in heavenly confections from our online cake shop. From irresistible flavors to seamless delivery, we make every celebration sweeter.
+                        Embark on a journey of artistic expression with our mehendi design portal, where creativity flourishes and beauty unfolds through intricate patterns and delicate handiwork. Explore a myriad of mesmerizing designs, perfect for adding a touch of elegance and charm to any occasion.
                     </div>
                 </div>
                 {/* heading and paragaph end */}
