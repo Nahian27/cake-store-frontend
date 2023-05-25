@@ -30,7 +30,7 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps() {
-    const products = await fetchDataFromApi("/api/products?populate=*");
+    const products = await fetchDataFromApi("/api/designs?populate=*");
 
     return {
         props: { products },

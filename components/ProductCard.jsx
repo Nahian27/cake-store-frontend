@@ -2,7 +2,7 @@ import { getDiscountedPricePercentage } from "@/utils/helper";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-const ProductCard = ({ data: { attributes: p, id } }) => {
+const ProductCard = ({ data: { attributes: p} }) => {
     return (
         <Link
             href={`/product/${p.slug}`}
