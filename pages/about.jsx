@@ -1,6 +1,15 @@
-export default function (){
+import { useEffect } from "react";
+
+
+export default function About(){
+    useEffect(() => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+        });
+    }, []);
     return(
-        <div className="h-[720px]">
+        <div className="h-[2560px]">
             <h1 className="text-center text-5xl font-semibold my-20">
                 About Us
             </h1>
